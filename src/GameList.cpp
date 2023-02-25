@@ -270,6 +270,7 @@ void GameList::on_add_to_queue(GdkEventButton *ev) {
 }
 
 void GameList::on_button_selected(GdkEventButton *ev, TITLE_CATEGORY cat) {
+    if (ev->button != 1) return;
     currentCategory = cat;
     infos = getTitleEntries(currentCategory);
     updateTitles(currentCategory, selectedRegion);
